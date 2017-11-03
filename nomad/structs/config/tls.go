@@ -84,9 +84,7 @@ func (t *TLSConfig) GetKeyLoader() *KeyLoader {
 
 	// If the keyloader has not yet been initialized, do it here
 	if t.KeyLoader == nil {
-		t.configLock.Lock()
 		t.KeyLoader = &KeyLoader{}
-		t.configLock.Unlock()
 	}
 	return t.KeyLoader
 }
